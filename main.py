@@ -19,7 +19,7 @@ def main() -> None:
     assert text, "entry must not be empty"
     assert "\n" not in text, "entry must be a single line"
     assert 1 <= len(text) <= 160, f"entry must be 1-160 chars, got {len(text)}"
-    assert text == text.strip(), "entry must not start or end with whitespace"
+    assert text == text.strip(), "out-of-office reply must not start or end with whitespace"
     out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
     os.makedirs(out_dir, exist_ok=True)
     with open(os.path.join(out_dir, "entry.txt"), "w", encoding="utf-8") as f:
